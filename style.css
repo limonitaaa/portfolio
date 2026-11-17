@@ -1,0 +1,1185 @@
+
+/* ==========================================
+   1. CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    background-color: #080808;
+    color: #080808;
+}
+
+:root {
+    --negro: #080808;
+    --fucsia: #ec008c;
+    --rosa: #ed69c5;
+    --rosa-claro: #f5a6d8;
+    --rosa-palido: #fff0f5;
+    --blanco: #ffffff;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.seccion {
+    position: relative;
+    isolation: isolate;
+}
+
+.titulo-seccion {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(60px, 7.5vw, 100px);
+    line-height: 1.05;
+    text-align: center;
+    color: var(--fucsia);
+    margin-bottom: 35px;
+}
+
+
+/* ==========================================
+   2. INICIO / PORTADA
+========================================== */
+
+.inicio {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    background-color: var(--negro);
+    display: flex;
+    flex-direction: column;
+}
+
+.portada {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 5%;
+}
+
+.portada h1 {
+    position: relative;
+    display: inline-block;
+    font-family: "Anton", sans-serif;
+    font-size: clamp(90px, 18vw, 260px);
+    line-height: 0.9;
+    color: var(--fucsia);
+    letter-spacing: -3px;
+    text-align: left;
+}
+
+.palabra-portfolio {
+    display: block;
+}
+
+.nombre-portada {
+    position: absolute;
+    right: 0;
+    bottom: -0.48em;
+    z-index: 2;
+    color: var(--rosa-claro);
+    font-family: "Poppins", sans-serif;
+    font-size: 0.62em;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    text-align: right;
+}
+
+/* ==========================================
+   3. MENÚ
+========================================== */
+
+.menu {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    min-height: 130px;
+    padding: 18px 20px;
+    background-color: var(--rosa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(18px, 3vw, 38px);
+}
+
+.menu a {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: var(--negro);
+    color: var(--rosa-claro);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    transition: 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.activo {
+    background-color: var(--blanco);
+    color: var(--fucsia);
+    transform: translateY(-4px);
+}
+
+
+/* ==========================================
+   4. SOBRE MÍ
+========================================== */
+
+.pantalla-completa {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+.sobre-mi {
+    background: linear-gradient(115deg, #ed69c5 0%, #f7c8e7 48%, #fff0f5 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(45px, 6vh, 75px) 6%;
+    gap: clamp(30px, 5vh, 55px);
+}
+
+.sobre-mi-contenido {
+    width: min(100%, 1120px);
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.35fr);
+    align-items: center;
+    gap: clamp(30px, 6vw, 80px);
+}
+
+.sobre-mi-foto {
+    width: min(100%, 330px);
+    aspect-ratio: 1;
+    justify-self: center;
+    border: 8px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 12px 30px #0002;
+}
+
+.sobre-mi-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sobre-mi-texto .titulo-seccion {
+    color: var(--fucsia);
+    text-align: left;
+    font-size: clamp(65px, 8vw, 105px);
+    margin-bottom: 22px;
+}
+
+.sobre-mi-texto p {
+    color: #292029;
+    font-size: clamp(12px, 1vw, 15px);
+    line-height: 1.75;
+    margin-bottom: 12px;
+}
+
+.sobre-mi-texto strong {
+    color: var(--fucsia);
+    font-weight: 700;
+}
+
+.sobre-mi-botones {
+    width: min(100%, 1120px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.boton-sobre-mi {
+    min-height: 105px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.35);
+    color: var(--fucsia);
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.titulo-boton {
+    display: block;
+    font-family: "Anton", sans-serif;
+    font-size: clamp(17px, 1.7vw, 25px);
+    line-height: 1.1;
+}
+
+.texto-boton {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    transition: 0.35s ease;
+}
+
+.boton-sobre-mi:hover,
+.boton-sobre-mi:focus-visible {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-4px);
+}
+
+.boton-sobre-mi:hover .texto-boton,
+.boton-sobre-mi:focus-visible .texto-boton {
+    max-height: 150px;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+
+/* ==========================================
+   5. SECCIONES LATERALES
+========================================== */
+
+.seccion-lateral {
+    width: min(90%, 1280px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenido-seccion {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.zona-volver {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+    width: calc((100vw - 100%) / 2);
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.zona-volver-izquierda {
+    right: 100%;
+    background: transparent;
+}
+
+.zona-volver-derecha {
+    left: 100%;
+    background: transparent;
+}
+
+.zona-volver-izquierda:hover {
+    background: linear-gradient(to left, rgba(236, 0, 140, 0.22), rgba(236, 0, 140, 0.02));
+}
+
+.zona-volver-derecha:hover {
+    background: linear-gradient(to right, rgba(236, 0, 140, 0.22), rgba(236, 0, 140, 0.02));
+}
+
+
+/* ==========================================
+   6. SERVICIOS
+========================================== */
+
+.servicios {
+    background: var(--rosa-palido);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 55px clamp(25px, 6vw, 85px);
+}
+
+.servicios .titulo-seccion {
+    font-size: clamp(70px, 9vw, 115px);
+    margin-bottom: clamp(30px, 5vh, 55px);
+}
+
+.servicios-contenido {
+    width: min(100%, 900px);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(190px, auto));
+    align-items: center;
+    justify-items: center;
+    gap: 25px 35px;
+    perspective: 1200px;
+}
+
+.tarjeta-servicio {
+    width: min(100%, 210px);
+    height: 190px;
+    position: relative;
+    border-radius: 15px;
+    outline: none;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.tarjeta-interior {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+    box-shadow: 0 8px 18px #0002;
+}
+
+.tarjeta-servicio.girada .tarjeta-interior {
+    transform: rotateY(180deg);
+}
+
+.tarjeta-frente,
+.tarjeta-reverso {
+    position: absolute;
+    inset: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.tarjeta-frente {
+    background-color: var(--rosa-claro);
+    color: var(--fucsia);
+}
+
+.tarjeta-frente h3,
+.tarjeta-reverso h3 {
+    font-family: "Anton", sans-serif;
+    font-size: clamp(14px, 1.3vw, 18px);
+    line-height: 1.25;
+}
+
+.tarjeta-reverso {
+    background-color: var(--rosa-palido);
+    color: var(--negro);
+    transform: rotateY(180deg);
+    border: 2px solid var(--rosa);
+}
+
+.tarjeta-reverso h3 {
+    color: var(--fucsia);
+    margin-bottom: 10px;
+}
+
+.tarjeta-reverso p {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.numero-tarjeta {
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+    font-size: 10px;
+    font-weight: 700;
+    opacity: 0.55;
+}
+
+.tarjeta-servicio:hover .tarjeta-interior {
+    box-shadow: 0 15px 25px #0003;
+}
+
+.tarjeta-servicio:focus-visible {
+    outline: 3px solid var(--fucsia);
+    outline-offset: 5px;
+}
+
+
+/* ==========================================
+   7. PROYECTOS Y CARRUSEL
+========================================== */
+
+.proyectos {
+    background-color: var(--negro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(30px, 5vh, 55px) clamp(20px, 3vw, 45px);
+}
+
+.proyectos .titulo-seccion {
+    white-space: nowrap;
+    text-align: center;
+    font-size: clamp(55px, 7vw, 90px);
+    margin-bottom: 30px;
+}
+
+.carousel-bienvenida {
+    position: relative;
+    width: min(100%, 1500px);
+    height: clamp(420px, 68vh, 720px);
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid var(--rosa-claro);
+    border-radius: 5px;
+    background-color: #171217;
+    box-shadow: 0 0 18px rgba(236, 0, 140, 0.15);
+}
+
+.carousel-track {
+    display: flex;
+    height: 100%;
+    gap: 0;
+    transition: transform 0.55s ease;
+}
+
+.carousel-slide {
+    position: relative;
+    flex: 0 0 33.333333%;
+    width: 33.333333%;
+    height: 100%;
+    overflow: hidden;
+    padding: 12px;
+}
+
+.carousel-slide a,
+.carousel-slide .abrir-video {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    padding: 0;
+    background-color: #171217;
+    overflow: hidden;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.35s ease;
+}
+
+.carousel-slide a:hover img,
+.carousel-slide .abrir-video:hover img {
+    transform: scale(1.04);
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--rosa-claro);
+    border-radius: 50%;
+    background-color: rgba(8, 8, 8, 0.85);
+    color: var(--blanco);
+    font-size: 30px;
+    line-height: 1;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+    background-color: var(--fucsia);
+}
+
+.carousel-control.anterior {
+    left: 12px;
+}
+
+.carousel-control.siguiente {
+    right: 12px;
+}
+
+
+/* ==========================================
+   8. VENTANA DEL VIDEO
+========================================== */
+
+.modal-video {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.92);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-video.abierto {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenido-modal-video {
+    position: relative;
+    width: min(100%, 1100px);
+    background-color: #000;
+    border: 2px solid var(--rosa);
+    box-shadow: 0 0 30px #ec008c55;
+}
+
+.contenido-modal-video video {
+    display: block;
+    width: 100%;
+    max-height: 80vh;
+    background-color: #000;
+}
+
+.cerrar-video {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--rosa-claro);
+    border-radius: 50%;
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-size: 30px;
+    line-height: 1;
+}
+
+.cerrar-video:hover {
+    background-color: var(--fucsia);
+}
+
+
+/* ==========================================
+   9. FOTOGRAFÍAS
+========================================== */
+
+.fotografias {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--rosa-palido);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: clamp(40px, 6vh, 75px) 4%;
+}
+
+.contenido-fotografias {
+    width: min(100%, 1500px);
+    position: relative;
+    z-index: 2;
+}
+
+.fotografias .titulo-seccion {
+    color: var(--fucsia);
+    font-size: clamp(55px, 8vw, 105px);
+    margin-bottom: clamp(25px, 4vh, 45px);
+}
+
+/* Las columnas permiten que cada marco se adapte
+   a la proporción real de su fotografía. */
+
+.galeria-fotos {
+    width: 100%;
+    columns: 4 220px;
+    column-gap: 16px;
+}
+
+.foto {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 16px;
+    padding: 5px;
+    break-inside: avoid;
+    border: 4px solid var(--negro);
+    background-color: var(--blanco);
+    box-shadow: 0 6px 14px #0002;
+}
+
+.foto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.45s ease;
+}
+
+.foto:hover img {
+    transform: scale(1.025);
+}
+
+/* Los laterales de fotografías siguen siendo clickeables,
+   pero no muestran difuminado. */
+
+.zona-fotografias {
+    background: transparent !important;
+}
+
+
+/* ==========================================
+   10. CLIENTES
+========================================== */
+
+.seccion-compacta {
+    padding: 65px clamp(25px, 6vw, 85px);
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.clientes {
+    background-color: var(--rosa-palido);
+}
+
+.encabezado-negro {
+    width: 100%;
+    padding: 22px 15px;
+    background-color: var(--negro);
+}
+
+.encabezado-negro .titulo-seccion {
+    margin: 0;
+    color: var(--fucsia);
+    font-size: clamp(65px, 8vw, 105px);
+}
+
+.opiniones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 35px 0 5px;
+}
+
+.opinion {
+    min-height: 150px;
+    padding: 25px 15px;
+    border: 1px solid var(--rosa);
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.icono-opinion {
+    color: var(--fucsia);
+    font-size: 30px;
+}
+
+.opinion p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   11. CONTACTO
+========================================== */
+
+.contacto {
+    background-color: var(--negro);
+}
+
+.contacto .encabezado-negro {
+    background-color: var(--negro);
+}
+
+.contacto .encabezado-negro .titulo-seccion {
+    color: var(--fucsia);
+}
+
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: clamp(30px, 6vw, 80px);
+    padding: 45px 5%;
+}
+
+.redes-sociales {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.redes-sociales a {
+    width: 105px;
+    height: 105px;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--rosa);
+    border-radius: 50%;
+    background-color: #171217;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    transform: translateY(-6px) scale(1.05);
+    background-color: #30202b;
+}
+
+.redes-sociales img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#formulario-contacto label {
+    margin-top: 8px;
+    color: var(--rosa-claro);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#formulario-contacto input,
+#formulario-contacto textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #dba4c7;
+    border-radius: 2px;
+    outline: none;
+    background-color: #fff;
+    color: var(--negro);
+    font-size: 13px;
+}
+
+#formulario-contacto input:focus,
+#formulario-contacto textarea:focus {
+    border-color: var(--fucsia);
+    box-shadow: 0 0 0 2px rgba(236, 0, 140, 0.2);
+}
+
+#formulario-contacto textarea {
+    resize: vertical;
+}
+
+#formulario-contacto button {
+    margin-top: 12px;
+    padding: 13px;
+    border: 0;
+    background-color: var(--fucsia);
+    color: var(--blanco);
+    font-size: 13px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+#formulario-contacto button:hover {
+    background-color: var(--rosa);
+    color: var(--negro);
+}
+
+#estado-formulario {
+    min-height: 20px;
+    color: var(--rosa-claro);
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   12. PIE DE PÁGINA
+========================================== */
+
+footer {
+    padding: 25px 15px;
+    background-color: var(--negro);
+    color: var(--rosa-claro);
+    text-align: center;
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   13. BOTÓN VOLVER ARRIBA
+========================================== */
+
+.volver-arriba {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 20;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--negro);
+    color: var(--rosa-claro);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.volver-arriba.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.volver-arriba:hover {
+    background-color: var(--fucsia);
+    color: var(--blanco);
+}
+
+
+/* ==========================================
+   14. ANIMACIONES
+========================================== */
+
+.animar-aparicion {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animar-aparicion.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   15. TABLETS
+========================================== */
+
+@media (max-width: 900px) {
+
+    .portada h1 {
+        font-size: clamp(85px, 17vw, 160px);
+    }
+
+    .sobre-mi {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .sobre-mi-contenido {
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 30px;
+    }
+
+    .sobre-mi-foto {
+        width: min(100%, 250px);
+    }
+
+    .sobre-mi-botones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .servicios-contenido {
+        gap: 18px;
+    }
+
+    .tarjeta-servicio {
+        height: 170px;
+    }
+
+    .carousel-bienvenida {
+        height: 65vh;
+    }
+
+    .galeria-fotos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contacto-contenido {
+        gap: 25px;
+    }
+
+    .redes-sociales a {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+
+/* ==========================================
+   16. CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    .inicio {
+        min-height: 100svh;
+    }
+
+    .portada h1 {
+        font-size: clamp(55px, 16vw, 95px);
+        letter-spacing: -1px;
+    }
+
+    .nombre-portada {
+        font-size: 0.55em;
+        bottom: -0.48em;
+        left: -0.2em;
+    }
+
+    .menu {
+        min-height: 90px;
+        gap: 9px;
+        padding: 10px 8px;
+    }
+
+    .menu a {
+        width: 42px;
+        height: 42px;
+        font-size: 19px;
+    }
+
+    .titulo-seccion {
+        font-size: 52px;
+    }
+
+    .sobre-mi {
+        min-height: auto;
+        padding: 55px 7%;
+    }
+
+    .sobre-mi-contenido {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .sobre-mi-foto {
+        width: 210px;
+    }
+
+    .sobre-mi-texto .titulo-seccion {
+        text-align: center;
+        font-size: 60px;
+    }
+
+    .sobre-mi-texto p {
+        font-size: 13px;
+    }
+
+    .sobre-mi-botones {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+    }
+
+    .boton-sobre-mi {
+        min-height: 100px;
+        padding: 12px;
+    }
+
+    .titulo-boton {
+        font-size: 18px;
+    }
+
+    .texto-boton {
+        font-size: 11px;
+    }
+
+    .boton-sobre-mi:hover .texto-boton,
+    .boton-sobre-mi:focus-visible .texto-boton {
+        max-height: 220px;
+    }
+
+    .seccion-lateral {
+        width: 90%;
+    }
+
+    .servicios {
+        min-height: auto;
+        padding: 55px 5%;
+    }
+
+    .servicios .titulo-seccion {
+        font-size: 65px;
+    }
+
+    .servicios-contenido {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 14px;
+    }
+
+    .tarjeta-servicio {
+        width: 100%;
+        height: 165px;
+    }
+
+    .tarjeta-frente,
+    .tarjeta-reverso {
+        padding: 13px 9px;
+    }
+
+    .tarjeta-frente h3,
+    .tarjeta-reverso h3 {
+        font-size: 13px;
+    }
+
+    .tarjeta-reverso p {
+        font-size: 10px;
+    }
+
+    .proyectos {
+        min-height: auto;
+        padding: 45px 4%;
+    }
+
+    .proyectos .titulo-seccion {
+        white-space: normal;
+        font-size: clamp(42px, 10vw, 60px);
+        margin-bottom: 20px;
+    }
+
+    .carousel-bienvenida {
+        height: 55vh;
+        min-height: 350px;
+        max-height: 600px;
+    }
+
+    .carousel-slide {
+        flex-basis: 100%;
+        width: 100%;
+        padding: 8px 45px;
+    }
+
+    .carousel-control {
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+    }
+
+    .fotografias {
+        min-height: auto;
+        padding: 55px 4%;
+    }
+
+    .fotografias .titulo-seccion {
+        font-size: clamp(55px, 13vw, 75px);
+    }
+
+    .galeria-fotos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .seccion-compacta {
+        padding: 45px 6%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .encabezado-negro .titulo-seccion {
+        font-size: 65px;
+    }
+
+    .opiniones {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .opinion {
+        min-height: 110px;
+    }
+
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 25px 2%;
+    }
+
+    .redes-sociales {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .redes-sociales a {
+        width: 60px;
+        height: 60px;
+        padding: 8px;
+    }
+
+    .zona-volver {
+        width: 5vw;
+    }
+
+    .modal-video {
+        padding: 15px;
+    }
+
+    .contenido-modal-video video {
+        max-height: 65vh;
+    }
+
+    footer {
+        font-size: 11px;
+    }
+}
+
+
+/* ==========================================
+   17. ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .animar-aparicion {
+        opacity: 1;
+        transform: none;
+    }
+}
